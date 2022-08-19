@@ -1,7 +1,6 @@
 console.clear()
 
-const culori = require('culori');
-const { adjustHue } = require("./adjustHue");
+import { formatHex } from 'culori/bundled/culori.mjs'
 
 function createScientificPalettes(baseColor) {
   const targetHueSteps = {

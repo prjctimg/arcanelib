@@ -40,5 +40,28 @@ function draw() {
     }
 }
 
+/* 
 
+*Grid by Dan Shiffman
 
+*/
+
+function draw() {
+    background(255);
+    stroke(255);
+    noFill();
+    beginShape();
+
+    for (var y = 0; y < rows; y++) {
+        xoff = 0;
+        for (var x = 0; x < cols; x++) {
+            var index = (x + y * width);
+            stroke(0);
+            push();
+            translate(x * scl, y * scl);
+            pop();
+            rect(x * scl, y * scl, scl, scl)
+        }
+
+    }
+}

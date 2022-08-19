@@ -1,4 +1,4 @@
-import { formatHex, nearest, differenceEuclidean } from 'culori/src/index';
+import { formatHex, nearest, differenceEuclidean } from 'culori/bundled/culori.umd';
 
 function adjustHue(val) {
   if (val < 0)
@@ -38,7 +38,7 @@ function createPalettes() {
     }));
 
   }
-  return palettes;
+  return console.log(palettes);
 }
 /* Example usage */
 const baseColor = {
@@ -52,7 +52,7 @@ const palettes = createPalettes(baseColor);
 /** 
  * Converts the LCH palettes to HEX for browser compatibility.
   */
- 
+
 
 
 /* A discovery function that will take an array of colors and find the best palette matches within it. Analogous,tetradic etc */
@@ -99,8 +99,8 @@ function adjustHue(val) {
   return val % 360;
 }
 
-function map(n,start1,end1,start2,end2){
-  return((n-start1)/(end1-start1))*(end2-start2)+start2
+function map(n, start1, end1, start2, end2) {
+  return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2
 }
 
 
@@ -111,31 +111,31 @@ function map(n,start1,end1,start2,end2){
  * 
  * Createe a loop that iterates four times. Each iteration will add a darker shade to the start of the array and a lighter tint at the end. Here we use map() to calculate our lightness values-a function that takes a number that usually exists in one range and converts it to another- and increase or decrease the hue using hueStep variable. Again adjustHueStep() is used to ensure values are between 0 and 360.
    */
-function createHueShiftPalette(opts){
-  const {base,minLightness,maxLightness,hueStep} = opts;
+function createHueShiftPalette(opts) {
+  const { base, minLightness, maxLightness, hueStep } = opts;
   const palette = [base];
-  for (let i = 1;i<5;i++){
-    const hueDark = adjustHue(base.h-hueStep*i);
+  for (let i = 1; i < 5; i++) {
+    const hueDark = adjustHue(base.h - hueStep * i);
 
-    const hueLight = adjustHue(base.h+hueStep*i);
+    const hueLight = adjustHue(base.h + hueStep * i);
 
-    const lightnessDark = map(i,0,4,base.l,minLightness);
+    const lightnessDark = map(i, 0, 4, base.l, minLightness);
 
-    const lightnessLight = map(i,0,4,base.l,maxLightness);
+    const lightnessLight = map(i, 0, 4, base.l, maxLightness);
 
     const chroma = base.c;
 
-    palette.push({l:lightnessDark,c:chroma,h:hueDark,mode:'lch'})
+    palette.push({ l: lightnessDark, c: chroma, h: hueDark, mode: 'lch' })
   }
   return palette;
 }
 
 
-/* Example usage */ 
+/* Example usage */
 
-const hueShiftPalette = createHueShiftPalette({base:{l:55,c:75,h:0,mode:'lch'},minLightness:10,maxLightness:90,hueStep:12});
+const hueShiftPalette = createHueShiftPalette({ base: { l: 55, c: 75, h: 0, mode: 'lch' }, minLightness: 10, maxLightness: 90, hueStep: 12 });
 
-const hueShiftPaletteHex = hueShiftPalette.map((color)=> formatHex(color));
+const hueShiftPaletteHex = hueShiftPalette.map((color) => formatHex(color));
 
 console.log(hueShiftPaletteHex)
 
