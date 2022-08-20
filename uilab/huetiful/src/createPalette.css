@@ -6,6 +6,8 @@
 ​
 body {
   display: grid;
+  width: 100vw;
+  height: 100vh;
   place-items: center;
   min-height: 100vh;
   line-height: 1.5;
@@ -13,13 +15,12 @@ body {
   font-family: system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--color-light);
-  color: var(--color-dark);
+  background: blue;
 }
 ​
 .card {
   padding: 2rem;
-  background: #fff;
+  background: rgb(108, 23, 23);
   border-radius: 1rem;
 }
 ​

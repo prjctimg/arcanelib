@@ -1,6 +1,8 @@
 console.clear()
 
-import { formatHex } from 'culori/bundled/culori.mjs'
+import { formatHex } from '../src/src/index';
+import { adjustHue } from './adjustHue';
+import './createPalette.css';
 
 function createScientificPalettes(baseColor) {
   const targetHueSteps = {

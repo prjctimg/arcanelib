@@ -30,3 +30,10 @@ export class MyComponent {
     return <div>Hello, World! I'm {this.getText()}</div>;
   }
 }
+
+// Must understand virtual DOM.
+//Async rendering.
+//Reactive data binding.
+//TypeScript
+//JSX
+//
