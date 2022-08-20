@@ -220,7 +220,7 @@ class Pattern {
 }
 
 
-const segment = new Segment(400, 200, 14, randomPalette(5, 25))
+const segment = new Segment(windowWidth, windowHeight, 14, randomPalette(5, 25))
 
 const container = document.createElement('div')
 container.innerHTML = segment.toString('segment')

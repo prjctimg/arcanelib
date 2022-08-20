@@ -1,97 +1,64 @@
-var inc = 0.1;
-var scl = 20;
-var cols;
-var rows;
-var zoff = 0;
-var particleObejct = 7000;
-var particles = [];
-var flowField;
+let minLength;
+let baseLength;
+let lengthRatio;
+let angleChange;
+let leafColor;
+let leafDensity;
+
+
 function setup() {
-  background(255);
-  createCanvas(windowWidth, windowHeight);
-  cols = floor(width / scl);
-  rows = floor(height / scl);
-  flowField = new Array(cols * rows);
-  for (var i = 0; i < particleObejct; i++) {
-    particles[i] = new Particle();
+  createCanvas(windowWidth, windowHeight)
+  background('gray')
+  noLoop()
+
+  minLength = random(1, 10);
+  baseLength = random(height / 8, height / 2);
+  lengthRatio = random(0.25, 0.75)
+  angleChange = random(PI / 32, PI / 3)
+  leafColor = color(random(0, 255), random(0, 255), random(0, 255))
+
+
+}
+
+function drawLeaves(x, y) {
+  push();
+
+  fill(leafColor);
+  noStroke();
+
+  for (let i = 0; i < leafDensity; i++) {
+    circle(randomGaussian(x, 10),
+      randomGaussian(y, 10),
+      random(2, 5))
+
+  }
+
+  pop();
+}
+
+
+
+function drawTree(x, y, angle, length) {
+  const [x1, y1] = [x, y]
+  const x2 = x1 + cos(angle) * length
+  const y2 = y1 - sin(angle) * length
+
+  line(x1, y1, x2, y2)
+
+
+  /* This adds recursion */
+  if (length >= minLength) {
+    drawTree(x2, y2, angle + angleChange, length * lengthRatio)
+    drawTree(x2, y2, angle - angleChange, length * lengthRatio)
+  } else {
+    drawLeaves(x2, y2)
   }
 }
+
+
+
 function draw() {
-  beginShape();
-  var yoff = 0;
-  for (var y = 0; y < rows; y++) {
-    xoff = 0;
-    for (var x = 0; x < cols; x++) {
-      var index = x + y * cols;
-      var angle = noise(xoff, yoff, zoff) * TWO_PI;
-      var v = p5.Vector.fromAngle(angle);
-      v.setMag(1);
-      flowField[index] = v;//store all of the vectors calculated into flow field
-      //push();
-      //translate(x*scl,y*scl)
-      //rotate(angle);
-      //strokeWeight(1);
-      //stroke(0,5);
-      //line(0,0,scl,0);
-      //pop();
-      xoff += inc;
-    }
-    yoff += inc;
-  }
-  for (var i = 0; i < particles.length; i++) {
-    particles[i].follow(flowField);
-    particles[i].edges();
-    particles[i].show();
-    particles[i].update();
-  }
+  drawTree(width / 2, height, PI / 2, baseLength)
+  stroke(0)
+
 }
-function Particle() {
-  this.pos = createVector(random(width), random(height));
-  this.vel = createVector(0, 0);
-  this.acc = createVector(0, 0);
-  this.maxspeed = 10;
-  this.prePos = this.pos.copy();
-  this.update = function () {
-    this.vel.add(this.acc);
-    this.vel.limit(this.maxspeed);
-    this.pos.add(this.vel); this.acc.mult(0);
-  }
-  this.applyForce = function (force) {
-    this.acc.add(force);
-  }
-  this.show = function () {
-    stroke(0, 20); strokeWeight(1); line(this.pos.x, this.pos.y, this.prePos.x, this.prePos.y);
-    this.updatePrev();
-  }
-  this.updatePrev = function () {
-    this.prePos.x = this.pos.x; this.prePos.y = this.pos.y;
-  }
-  this.edges = function () {
-    if (this.pos.x > width) {
-      this.pos.x = 0;
-      this.updatePrev();
-    }
-    if (this.pos.x < 0) {
-      this.pos.x = width;
-      this.updatePrev();
-    }
-    if (this.pos.y < 0) { this.pos.y = height; this.updatePrev(); } if (this.pos.y > height) {
-      this.pos.y = 0;
-      this.updatePrev();
-    }
-  }
-  this.follow = function (vectors) {
-    var x = floor(this.pos.x / scl);//position in relationship to scale "vector" unit or grid"
-    var y = floor(this.pos.y / scl);
-    var index = x + y * cols;
-    var force = vectors[index];
-    this.applyForce(force);
-  }
-}
-
-
-
-
-
-
-
