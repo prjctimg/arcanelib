@@ -6,9 +6,15 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ArcButton {
+    }
+    interface ArcCalendar {
+    }
     interface ArcDropdown {
     }
     interface ArcFab {
+    }
+    interface ArcInput {
     }
     interface ArcNavbar {
     }
@@ -16,10 +22,24 @@ export namespace Components {
     }
     interface ArcSearch {
     }
+    interface ArcTextbox {
+    }
     interface ArcTimer {
     }
 }
 declare global {
+    interface HTMLArcButtonElement extends Components.ArcButton, HTMLStencilElement {
+    }
+    var HTMLArcButtonElement: {
+        prototype: HTMLArcButtonElement;
+        new (): HTMLArcButtonElement;
+    };
+    interface HTMLArcCalendarElement extends Components.ArcCalendar, HTMLStencilElement {
+    }
+    var HTMLArcCalendarElement: {
+        prototype: HTMLArcCalendarElement;
+        new (): HTMLArcCalendarElement;
+    };
     interface HTMLArcDropdownElement extends Components.ArcDropdown, HTMLStencilElement {
     }
     var HTMLArcDropdownElement: {
@@ -31,6 +51,12 @@ declare global {
     var HTMLArcFabElement: {
         prototype: HTMLArcFabElement;
         new (): HTMLArcFabElement;
+    };
+    interface HTMLArcInputElement extends Components.ArcInput, HTMLStencilElement {
+    }
+    var HTMLArcInputElement: {
+        prototype: HTMLArcInputElement;
+        new (): HTMLArcInputElement;
     };
     interface HTMLArcNavbarElement extends Components.ArcNavbar, HTMLStencilElement {
     }
@@ -50,6 +76,12 @@ declare global {
         prototype: HTMLArcSearchElement;
         new (): HTMLArcSearchElement;
     };
+    interface HTMLArcTextboxElement extends Components.ArcTextbox, HTMLStencilElement {
+    }
+    var HTMLArcTextboxElement: {
+        prototype: HTMLArcTextboxElement;
+        new (): HTMLArcTextboxElement;
+    };
     interface HTMLArcTimerElement extends Components.ArcTimer, HTMLStencilElement {
     }
     var HTMLArcTimerElement: {
@@ -57,18 +89,28 @@ declare global {
         new (): HTMLArcTimerElement;
     };
     interface HTMLElementTagNameMap {
+        "arc-button": HTMLArcButtonElement;
+        "arc-calendar": HTMLArcCalendarElement;
         "arc-dropdown": HTMLArcDropdownElement;
         "arc-fab": HTMLArcFabElement;
+        "arc-input": HTMLArcInputElement;
         "arc-navbar": HTMLArcNavbarElement;
         "arc-popup": HTMLArcPopupElement;
         "arc-search": HTMLArcSearchElement;
+        "arc-textbox": HTMLArcTextboxElement;
         "arc-timer": HTMLArcTimerElement;
     }
 }
 declare namespace LocalJSX {
+    interface ArcButton {
+    }
+    interface ArcCalendar {
+    }
     interface ArcDropdown {
     }
     interface ArcFab {
+    }
+    interface ArcInput {
     }
     interface ArcNavbar {
     }
@@ -76,14 +118,20 @@ declare namespace LocalJSX {
     }
     interface ArcSearch {
     }
+    interface ArcTextbox {
+    }
     interface ArcTimer {
     }
     interface IntrinsicElements {
+        "arc-button": ArcButton;
+        "arc-calendar": ArcCalendar;
         "arc-dropdown": ArcDropdown;
         "arc-fab": ArcFab;
+        "arc-input": ArcInput;
         "arc-navbar": ArcNavbar;
         "arc-popup": ArcPopup;
         "arc-search": ArcSearch;
+        "arc-textbox": ArcTextbox;
         "arc-timer": ArcTimer;
     }
 }
@@ -91,11 +139,15 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "arc-button": LocalJSX.ArcButton & JSXBase.HTMLAttributes<HTMLArcButtonElement>;
+            "arc-calendar": LocalJSX.ArcCalendar & JSXBase.HTMLAttributes<HTMLArcCalendarElement>;
             "arc-dropdown": LocalJSX.ArcDropdown & JSXBase.HTMLAttributes<HTMLArcDropdownElement>;
             "arc-fab": LocalJSX.ArcFab & JSXBase.HTMLAttributes<HTMLArcFabElement>;
+            "arc-input": LocalJSX.ArcInput & JSXBase.HTMLAttributes<HTMLArcInputElement>;
             "arc-navbar": LocalJSX.ArcNavbar & JSXBase.HTMLAttributes<HTMLArcNavbarElement>;
             "arc-popup": LocalJSX.ArcPopup & JSXBase.HTMLAttributes<HTMLArcPopupElement>;
             "arc-search": LocalJSX.ArcSearch & JSXBase.HTMLAttributes<HTMLArcSearchElement>;
+            "arc-textbox": LocalJSX.ArcTextbox & JSXBase.HTMLAttributes<HTMLArcTextboxElement>;
             "arc-timer": LocalJSX.ArcTimer & JSXBase.HTMLAttributes<HTMLArcTimerElement>;
         }
     }
