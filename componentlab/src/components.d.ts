@@ -6,56 +6,97 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface ArcDropdown {
+    }
+    interface ArcFab {
+    }
+    interface ArcNavbar {
+    }
+    interface ArcPopup {
+    }
+    interface ArcSearch {
+    }
+    interface ArcTimer {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLArcDropdownElement extends Components.ArcDropdown, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLArcDropdownElement: {
+        prototype: HTMLArcDropdownElement;
+        new (): HTMLArcDropdownElement;
+    };
+    interface HTMLArcFabElement extends Components.ArcFab, HTMLStencilElement {
+    }
+    var HTMLArcFabElement: {
+        prototype: HTMLArcFabElement;
+        new (): HTMLArcFabElement;
+    };
+    interface HTMLArcNavbarElement extends Components.ArcNavbar, HTMLStencilElement {
+    }
+    var HTMLArcNavbarElement: {
+        prototype: HTMLArcNavbarElement;
+        new (): HTMLArcNavbarElement;
+    };
+    interface HTMLArcPopupElement extends Components.ArcPopup, HTMLStencilElement {
+    }
+    var HTMLArcPopupElement: {
+        prototype: HTMLArcPopupElement;
+        new (): HTMLArcPopupElement;
+    };
+    interface HTMLArcSearchElement extends Components.ArcSearch, HTMLStencilElement {
+    }
+    var HTMLArcSearchElement: {
+        prototype: HTMLArcSearchElement;
+        new (): HTMLArcSearchElement;
+    };
+    interface HTMLArcTimerElement extends Components.ArcTimer, HTMLStencilElement {
+    }
+    var HTMLArcTimerElement: {
+        prototype: HTMLArcTimerElement;
+        new (): HTMLArcTimerElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "arc-dropdown": HTMLArcDropdownElement;
+        "arc-fab": HTMLArcFabElement;
+        "arc-navbar": HTMLArcNavbarElement;
+        "arc-popup": HTMLArcPopupElement;
+        "arc-search": HTMLArcSearchElement;
+        "arc-timer": HTMLArcTimerElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface ArcDropdown {
+    }
+    interface ArcFab {
+    }
+    interface ArcNavbar {
+    }
+    interface ArcPopup {
+    }
+    interface ArcSearch {
+    }
+    interface ArcTimer {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "arc-dropdown": ArcDropdown;
+        "arc-fab": ArcFab;
+        "arc-navbar": ArcNavbar;
+        "arc-popup": ArcPopup;
+        "arc-search": ArcSearch;
+        "arc-timer": ArcTimer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "arc-dropdown": LocalJSX.ArcDropdown & JSXBase.HTMLAttributes<HTMLArcDropdownElement>;
+            "arc-fab": LocalJSX.ArcFab & JSXBase.HTMLAttributes<HTMLArcFabElement>;
+            "arc-navbar": LocalJSX.ArcNavbar & JSXBase.HTMLAttributes<HTMLArcNavbarElement>;
+            "arc-popup": LocalJSX.ArcPopup & JSXBase.HTMLAttributes<HTMLArcPopupElement>;
+            "arc-search": LocalJSX.ArcSearch & JSXBase.HTMLAttributes<HTMLArcSearchElement>;
+            "arc-timer": LocalJSX.ArcTimer & JSXBase.HTMLAttributes<HTMLArcTimerElement>;
         }
     }
 }

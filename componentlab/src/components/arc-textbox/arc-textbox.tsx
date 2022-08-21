@@ -1,18 +1,16 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'arc-popup',
-  styleUrl: 'arc-popup.css',
+  tag: 'arc-textbox',
+  styleUrl: 'arc-textbox.css',
   shadow: true,
 })
-export class ArcPopup {
+export class ArcTextbox {
 
   render() {
     return (
       <Host>
-        <slot>
-
-        </slot>
+        <slot></slot>
       </Host>
     );
   }
