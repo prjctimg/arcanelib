@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/culoriPalette.js',
+    entry: './src/blobs.js',
     output: {
-        filename: 'palletteEmit.js',
+        filename: 'blob.js',
         path: path.resolve(__dirname, 'build')
 
     },
