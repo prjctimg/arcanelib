@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ArcButton {
+        "color": ArcButtonType;
     }
     interface ArcCalendar {
     }
@@ -103,6 +104,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ArcButton {
+        "color"?: ArcButtonType;
     }
     interface ArcCalendar {
     }

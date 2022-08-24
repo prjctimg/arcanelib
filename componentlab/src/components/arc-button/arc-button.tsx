@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { StyledHost } from './styled-host';
+import { StyledHost } from '../../utils/styled-host';
 
 @Component({
   tag: 'arc-button',
