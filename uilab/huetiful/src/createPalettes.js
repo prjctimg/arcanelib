@@ -46,3 +46,4 @@ function generate(baseColor) {
   }
   return _palettes;
 }
+
