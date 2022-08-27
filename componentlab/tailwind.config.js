@@ -951,5 +951,14 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    styled: true,
+    themes: false,
+    base: true,
+    utils: true,
+    logs: true,
+    prefix: '',
+    darkTheme: 'dark'
+  }
 }

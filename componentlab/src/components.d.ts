@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Colors } from "./components/arc-navbar/arc-navbar";
 export namespace Components {
     interface ArcButton {
-        "color": ArcButtonType;
     }
     interface ArcCalendar {
     }
@@ -18,6 +18,7 @@ export namespace Components {
     interface ArcInput {
     }
     interface ArcNavbar {
+        "color": Colors;
     }
     interface ArcPopup {
     }
@@ -104,7 +105,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ArcButton {
-        "color"?: ArcButtonType;
     }
     interface ArcCalendar {
     }
@@ -115,6 +115,7 @@ declare namespace LocalJSX {
     interface ArcInput {
     }
     interface ArcNavbar {
+        "color"?: Colors;
     }
     interface ArcPopup {
     }
