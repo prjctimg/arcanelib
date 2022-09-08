@@ -1,17 +1,17 @@
 import { Component, Host, h } from '@stencil/core';
+import { StyledHost } from '../../utils/styled-host';
 
 @Component({
   tag: 'arc-input',
-  styleUrl: 'arc-input.css',
   shadow: true,
 })
 export class ArcInput {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <StyledHost>
+        <input class={`input input-bordered `} />
+      </StyledHost>
     );
   }
 

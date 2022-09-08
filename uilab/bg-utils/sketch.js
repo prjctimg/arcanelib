@@ -6,7 +6,7 @@ var scl = 20;
 var cols;
 var rows;
 var zoff = 0;
-var particleObejct = 120;
+var particleObejct = 7000;
 var particles = [];
 
 var flowField;

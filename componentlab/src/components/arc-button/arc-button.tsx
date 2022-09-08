@@ -9,6 +9,7 @@ import { StyledHost } from '../../utils/styled-host';
 export class ArcButton {
 
   render() {
+
     return (
       <StyledHost>
         <slot>

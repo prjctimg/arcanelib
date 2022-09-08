@@ -7,32 +7,26 @@
         <link rel="stylesheet" href="../build/arcanelib.css" />
         <title>Document</title>
     </head>
-    <body class="flex-col">
-        <nav class="navbar navbar-center justify-center text-white w-[6%] bg-black">
-            <ul class="space-x-4">
-                <li class="list-item font-bold text-base font-sans">Home</li>
-                <li class="list-item font-bold text-base font-sans">Projects</li>
-                <li class="lsist-item font-bold text-base font-sans">About</li>
+    <body>
+        <nav class="navbar navbar-center justify-center place-items-center bg-black sticky top-0">
+            <ul class="space-x-3">
+                <li class="list-item text-white text-base">Home</li>
+                <li class="list-item text-white text-base">Home</li>
+                <li class="list-item text-white text-base">Home</li>
             </ul>
         </nav>
-        <main class="flex min-h-screen bg-slate-800">
-            <div class="card justify-content-center flex-shrink-0 justify-items-center my-16 mx-auto h-[60vh] py-4 w-[25%] bg-white rounded-md shadow-md">
-                <h3 class="card-title font-bold font-sans text-xl text-black">Hello</h3>
-                <div class="avatar rounded-full w-32 h-32 bg-black mx-auto"></div>
-                <div class="card-body text-center">
-                    <p>I'm a frontend developer from Harare,Zimbabwe.</p>
-                </div>
+        <main class="flex min-h-screen bg-gray-600">
+            <aside class="float-right w-[6%] h-screen bg-cyan-600"></aside>
 
-                <div class="card-actions mx-auto mt-4 px-3">
-                    <button class="btn-primary px-2 py-2 rounded-md">MORE</button>
+            <article class="card bg-white shadow-md rounded-md w-[20%] h-[60vh] my-12 mx-auto">
+                <h2 class="card-title mx-auto text-blue-600 text-3xl font-bold">Hey there!</h2>
+                <img class="mx-auto w-18 h-24 avatar rounded-full py-4" src="./img/arcane_logo.jpeg" alt="" />
+                <div class="card-body">My name is Dean and I'm a frontend developer from Zimbabwe.</div>
+                <div class="card-actions py-3 px-4 space-x-2">
+                    <button class="btn bg-black px-2 py-2.5">My portfolio</button>
                 </div>
-            </div>
+            </article>
         </main>
-        <p class="font-bold text-white font-sans text-2xl text-center">Hey there.</p>
-        <footer class="footer footer-center bg-black w-full h-fit text-white">
-            <li>HEYYY</li>
-            <li>HEYYY</li>
-            <li>HEYYY</li>
-        </footer>
+        <footer class="footer bg-black h-[30vh] w-screen"></footer>
     </body>
 </html>

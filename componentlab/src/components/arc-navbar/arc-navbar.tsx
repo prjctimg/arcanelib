@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { StyledHost } from '../../utils/styled-host';
+import { ArcSearch } from '../arc-search/arc-search';
 //Add icon library  pref. hero icons.
 
 export type Colors = {
@@ -14,8 +15,7 @@ export type Colors = {
 
 @Component({
   tag: 'arc-navbar',
-
-  shadow: true,
+  shadow: true
 })
 export class ArcHeader {
 
@@ -24,11 +24,15 @@ export class ArcHeader {
   render() {
     return (
       <StyledHost>
-        <header>
-          <button class={` ${this.color}  
-        `}>      Dean    </button>
+        <nav class={`navbar  text-black  bg-gray-400 w-screen`}>
+          <h2 class={`text-lg text-gray-800 font-sans px-2`}>E-learning</h2>
 
-        </header>
+          {/* Search input container. */}
+          <div class="mx-auto w-fit space-x-2 px-2 py-2.5">
+            <input class={`input input-ghost rounded-full placeholder:text-gray-700`} type="search" placeholder='Search...' />
+            <button class={`btn rounded-full px-2 py-2.5 bg-black text-white hover:bg-slate-700`} type="submit">Icon</button>
+          </div>
+        </nav>
 
       </StyledHost>
     );

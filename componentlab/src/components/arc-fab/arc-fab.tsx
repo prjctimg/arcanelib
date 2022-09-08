@@ -1,17 +1,17 @@
 import { Component, Host, h } from '@stencil/core';
+import { StyledHost } from '../../utils/styled-host';
 
 @Component({
   tag: 'arc-fab',
-  styleUrl: 'arc-fab.css',
   shadow: true,
 })
 export class ArcFab {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <StyledHost>
+        <button class="btn btn-circle text-white bg-black">FAB</button>
+      </StyledHost>
     );
   }
 
